@@ -7,15 +7,13 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_person")
-public class Person implements Serializable {
+@Table(name = "tb_contact")
+public class Contact implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -23,29 +21,22 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String email;
 
-    private String cpfCnpj;
+    private String phoneNumber;
 
-    private String generalRegistration;
-
-    private LocalDate birthDate;
-
-    private String companyName;
-
-    private String stateRegistration;
-
-    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-    private LocalDateTime registrationTime = LocalDateTime.now();
+    @ManyToOne
+    @JoinColumn(name = "person_id", nullable = false)
+    private Person person;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Person person = (Person) o;
+        Contact contact = (Contact) o;
 
-        return id.equals(person.id);
+        return id.equals(contact.id);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.kl.advocatesystem.entities;
 
+import com.kl.advocatesystem.entities.enums.PersonCategory;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,15 +8,13 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_person")
-public class Person implements Serializable {
+@Table(name = "tb_adress")
+public class Adress implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -23,29 +22,34 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String zipCode;
 
-    private String cpfCnpj;
+    private String street;
 
-    private String generalRegistration;
+    private String number;
 
-    private LocalDate birthDate;
+    private String neighborhood;
 
-    private String companyName;
+    private String city;
 
-    private String stateRegistration;
+    private String state;
 
-    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-    private LocalDateTime registrationTime = LocalDateTime.now();
+    private String country;
+
+    private PersonCategory personCategory;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id", nullable=false)
+    private Person person;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Person person = (Person) o;
+        Adress adress = (Adress) o;
 
-        return id.equals(person.id);
+        return id.equals(adress.id);
     }
 
     @Override
