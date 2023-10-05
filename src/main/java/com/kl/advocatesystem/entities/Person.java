@@ -25,7 +25,7 @@ public class Person implements Serializable {
 
     private String name;
 
-    private String cpfCnpj;
+    private String documentNumber;
 
     private String generalRegistration;
 
@@ -37,6 +37,10 @@ public class Person implements Serializable {
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private LocalDateTime registrationTime = LocalDateTime.now();
+
+    @ManyToOne
+    @JoinColumn(name = "office_id", nullable=false)
+    private Office office;
 
     @Override
     public boolean equals(Object o) {

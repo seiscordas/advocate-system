@@ -1,5 +1,6 @@
 package com.kl.advocatesystem.entities;
 
+import com.kl.advocatesystem.entities.enums.PersonCategory;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,8 +13,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_contact")
-public class Contact implements Serializable {
+@Table(name = "tb_address")
+public class Address implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -21,12 +22,26 @@ public class Contact implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String email;
+    private String zipCode;
 
-    private String phoneNumber;
+    private String street;
+
+    private String number;
+
+    private String neighborhood;
+
+    private String city;
+
+    private String state;
+
+    private String country;
+
+    private PersonCategory personCategory;
+
+    private Boolean mainAddress;
 
     @ManyToOne
-    @JoinColumn(name = "person_id", nullable = false)
+    @JoinColumn(name = "person_id")
     private Person person;
 
     @ManyToOne
@@ -38,9 +53,9 @@ public class Contact implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Contact contact = (Contact) o;
+        Address address = (Address) o;
 
-        return id.equals(contact.id);
+        return id.equals(address.id);
     }
 
     @Override
