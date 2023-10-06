@@ -22,17 +22,11 @@ public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     private String documentNumber;
-
     private String generalRegistration;
-
     private LocalDate birthDate;
-
     private String companyName;
-
     private String stateRegistration;
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")

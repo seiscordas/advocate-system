@@ -21,15 +21,10 @@ public class Office implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     private String companyName;
-
     private String stateRegistration;
-
     private String documentNumber;
-
     private Boolean mainOffice;
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")

@@ -21,23 +21,14 @@ public class Address implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String zipCode;
-
     private String street;
-
     private String number;
-
     private String neighborhood;
-
     private String city;
-
     private String state;
-
     private String country;
-
     private PersonCategory personCategory;
-
     private Boolean mainAddress;
 
     @ManyToOne
