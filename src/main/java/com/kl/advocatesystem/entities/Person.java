@@ -1,5 +1,6 @@
 package com.kl.advocatesystem.entities;
 
+import com.kl.advocatesystem.dto.PersonDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,13 +29,31 @@ public class Person implements Serializable {
     private LocalDate birthDate;
     private String companyName;
     private String stateRegistration;
+    private String active;
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private LocalDateTime registrationTime = LocalDateTime.now();
 
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    private LocalDateTime lastModificationTime = LocalDateTime.now();
+
     @ManyToOne
     @JoinColumn(name = "office_id", nullable=false)
     private Office office;
+
+    public Person(PersonDTO personDTO) {
+        this.id = personDTO.getId();
+        this.name = personDTO.getName();
+        this.documentNumber = personDTO.getDocumentNumber();
+        this.generalRegistration = personDTO.getGeneralRegistration();
+        this.birthDate = personDTO.getBirthDate();
+        this.companyName = personDTO.getCompanyName();
+        this.stateRegistration = personDTO.getStateRegistration();
+        this.registrationTime = personDTO.getRegistrationTime();
+        this.lastModificationTime = personDTO.getLastModificationTime();
+        this.office = personDTO.getOffice();
+        this.active = personDTO.getActive();
+    }
 
     @Override
     public boolean equals(Object o) {

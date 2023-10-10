@@ -2,10 +2,7 @@ package com.kl.advocatesystem.dto;
 
 import com.kl.advocatesystem.entities.Office;
 import com.kl.advocatesystem.entities.Person;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -15,7 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class PersonDTO implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -28,7 +25,9 @@ public class PersonDTO implements Serializable {
     private String companyName;
     private String stateRegistration;
     private LocalDateTime registrationTime;
+    private LocalDateTime lastModificationTime;
     private Office office;
+    private String active;
 
     public PersonDTO(Person person) {
         this.id = person.getId();
@@ -39,6 +38,8 @@ public class PersonDTO implements Serializable {
         this.companyName = person.getCompanyName();
         this.stateRegistration = person.getStateRegistration();
         this.registrationTime = person.getRegistrationTime();
+        this.lastModificationTime = person.getLastModificationTime();
         this.office = person.getOffice();
+        this.active = person.getActive();
     }
 }
