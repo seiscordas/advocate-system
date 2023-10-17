@@ -64,6 +64,7 @@ public class PersonService {
         person.setBirthDate(personDTO.getBirthDate());
         person.setCompanyName(personDTO.getCompanyName());
         person.setStateRegistration(personDTO.getStateRegistration());
+        person.setRegistrationTime(personDTO.getRegistrationTime());
         person.setLastModificationTime(personDTO.getLastModificationTime());
         person.setOffice(personDTO.getOffice());
         person.setActive(personDTO.getActive());

@@ -24,7 +24,9 @@ public class OfficeDTO implements Serializable {
     private String stateRegistration;
     private String documentNumber;
     private Boolean mainOffice;
-    private LocalDateTime registrationTime = LocalDateTime.now();
+    private Boolean active;
+    private LocalDateTime registrationTime;
+    private LocalDateTime lastModificationTime;
 
     public OfficeDTO(Office office) {
         this.id = office.getId();
@@ -32,7 +34,8 @@ public class OfficeDTO implements Serializable {
         this.companyName = office.getCompanyName();
         this.stateRegistration = office.getStateRegistration();
         this.documentNumber = office.getDocumentNumber();
-        this.mainOffice = getMainOffice();
+        this.mainOffice = office.getMainOffice();
         this.registrationTime = office.getRegistrationTime();
+        this.lastModificationTime = office.getLastModificationTime();
     }
 }

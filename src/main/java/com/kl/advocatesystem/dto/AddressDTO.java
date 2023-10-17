@@ -11,6 +11,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -30,6 +31,8 @@ public class AddressDTO implements Serializable {
     private String country;
     private PersonCategory personCategory;
     private Boolean mainAddress;
+    private LocalDateTime registrationTime;
+    private LocalDateTime lastModificationTime;
     private Person person;
     private Office office;
 

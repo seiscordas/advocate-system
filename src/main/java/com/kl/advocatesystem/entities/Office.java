@@ -1,5 +1,6 @@
 package com.kl.advocatesystem.entities;
 
+import com.kl.advocatesystem.dto.OfficeDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,9 +27,24 @@ public class Office implements Serializable {
     private String stateRegistration;
     private String documentNumber;
     private Boolean mainOffice;
+    private Boolean active;
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private LocalDateTime registrationTime = LocalDateTime.now();
+
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    private LocalDateTime lastModificationTime = LocalDateTime.now();
+
+    public Office(OfficeDTO officeDTO) {
+        this.id = officeDTO.getId();
+        this.name = officeDTO.getName();
+        this.companyName = officeDTO.getCompanyName();
+        this.stateRegistration = officeDTO.getStateRegistration();
+        this.documentNumber = officeDTO.getDocumentNumber();
+        this.mainOffice = officeDTO.getMainOffice();
+        this.registrationTime = officeDTO.getRegistrationTime();
+        this.lastModificationTime = officeDTO.getLastModificationTime();
+    }
 
     @Override
     public boolean equals(Object o) {

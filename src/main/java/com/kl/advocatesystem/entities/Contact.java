@@ -1,5 +1,6 @@
 package com.kl.advocatesystem.entities;
 
+import com.kl.advocatesystem.dto.ContactDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Getter
@@ -24,6 +26,12 @@ public class Contact implements Serializable {
     private String email;
     private String phoneNumber;
 
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    private LocalDateTime registrationTime = LocalDateTime.now();
+
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    private LocalDateTime lastModificationTime = LocalDateTime.now();
+
     @ManyToOne
     @JoinColumn(name = "person_id", nullable = false)
     private Person person;
@@ -31,6 +39,16 @@ public class Contact implements Serializable {
     @ManyToOne
     @JoinColumn(name = "office_id", nullable=false)
     private Office office;
+
+    public Contact(ContactDTO contactDTO) {
+        this.id = contactDTO.getId();
+        this.email = contactDTO.getEmail();
+        this.phoneNumber = contactDTO.getPhoneNumber();
+        this.registrationTime = contactDTO.getRegistrationTime();
+        this.lastModificationTime = contactDTO.getLastModificationTime();
+        this.person = contactDTO.getPerson();
+        this.office = contactDTO.getOffice();
+    }
 
     @Override
     public boolean equals(Object o) {

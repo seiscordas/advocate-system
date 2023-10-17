@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,6 +26,8 @@ public class UserDTO implements Serializable {
     private String lastName;
     private String email;
     private String password;
+    private LocalDateTime registrationTime;
+    private LocalDateTime lastModificationTime;
     private Set<Role> roles = new HashSet<>();
 
     public UserDTO(User user) {
@@ -33,6 +36,8 @@ public class UserDTO implements Serializable {
         this.lastName = user.getLastName();
         this.email = user.getEmail();
         this.password = user.getPassword();
+        this.registrationTime = user.getRegistrationTime();
+        this.lastModificationTime = user.getLastModificationTime();
         this.roles = user.getRoles();
     }
 }
