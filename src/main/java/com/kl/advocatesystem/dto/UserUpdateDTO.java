@@ -1,6 +1,6 @@
 package com.kl.advocatesystem.dto;
 
-import com.kl.advocatesystem.services.validation.UserUpdateValid;
+import com.kl.advocatesystem.application.user.validation.UserUpdateValid;
 
 @UserUpdateValid
 public class UserUpdateDTO extends UserDTO{

@@ -1,6 +1,6 @@
 package com.kl.advocatesystem.resources;
 
-import com.kl.advocatesystem.services.PersonService;
+import com.kl.advocatesystem.application.user.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

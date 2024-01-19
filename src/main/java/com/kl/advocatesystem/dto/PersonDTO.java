@@ -1,7 +1,7 @@
 package com.kl.advocatesystem.dto;
 
-import com.kl.advocatesystem.entities.Office;
-import com.kl.advocatesystem.entities.Person;
+import com.kl.advocatesystem.domain.entities.Office;
+import com.kl.advocatesystem.domain.entities.Person;
 import lombok.*;
 
 import java.io.Serial;

@@ -1,7 +1,7 @@
 package com.kl.advocatesystem.resources.exceptions;
 
-import com.kl.advocatesystem.services.exceptions.DatabaseException;
-import com.kl.advocatesystem.services.exceptions.ResourceNotFoundException;
+import com.kl.advocatesystem.application.user.exceptions.DatabaseException;
+import com.kl.advocatesystem.application.user.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

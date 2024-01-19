@@ -1,6 +1,6 @@
 package com.kl.advocatesystem.dto;
 
-import com.kl.advocatesystem.entities.User;
+import com.kl.advocatesystem.domain.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

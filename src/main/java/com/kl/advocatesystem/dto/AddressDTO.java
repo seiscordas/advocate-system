@@ -1,9 +1,9 @@
 package com.kl.advocatesystem.dto;
 
-import com.kl.advocatesystem.entities.Address;
-import com.kl.advocatesystem.entities.Office;
-import com.kl.advocatesystem.entities.Person;
-import com.kl.advocatesystem.entities.enums.PersonCategory;
+import com.kl.advocatesystem.domain.entities.Address;
+import com.kl.advocatesystem.domain.entities.Office;
+import com.kl.advocatesystem.domain.entities.Person;
+import com.kl.advocatesystem.domain.enums.PersonCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

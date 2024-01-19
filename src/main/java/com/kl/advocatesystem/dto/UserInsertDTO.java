@@ -1,6 +1,6 @@
 package com.kl.advocatesystem.dto;
 
-import com.kl.advocatesystem.services.validation.UserInsertValid;
+import com.kl.advocatesystem.application.user.validation.UserInsertValid;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,0 +1,77 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: Adm0321#
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  database:
+    driverClassName: org.postgresql.Driver
+  application:
+    name: Advocate System
+
+security:
+  user:
+    password: none
+server:
+  port: 8082
+
+logging:
+  level:
+    org.springframework.security: INFO
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#spring.jpa.database=POSTGRESQL
+#spring.datasource.platform=postgres
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=create-drop
+#spring.database.driverClassName=org.postgresql.Driver
+#spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+#spring.datasource.username=postgres
+#spring.datasource.password=Adm0321#
+#server.port=8082
+
+#spring.application.name=Advocate System
+
+#spring.security.user.name=kleber
+#spring.security.user.password=1234
+
+## logging
+#logging.level.org.springframework.security=INFO
+#logging.pattern.console=%d{dd-MM-yyyy HH:mm:ss} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n
+
+#spring.security.oauth2.client.registration.external.provider=external
+#spring.security.oauth2.client.registration.external.client-name=external-client
+#spring.security.oauth2.client.registration.external.client-id=external-client
+#spring.security.oauth2.client.registration.external.client-secret=${CLIENT_SECRET}
+#spring.security.oauth2.client.registration.external.scope=openid,offline_access,profile
+#spring.security.oauth2.client.registration.external.authorization-grant-type=authorization_code
+
+# Definindo o nível de log para o pacote org.springframework.security como TRACE
+#logging.level.org.springframework.security=TRACE
+
+# Ativar o Authorization Server embutido
+#spring.security.oauth2.authorization.server.jwt.enabled=true
+
+# Configurações específicas do JWT
+#spring.security.oauth2.authorization.server.jwt.key-value=chave-de-assinatura-para-jwt
+#spring.security.oauth2.authorization.server.jwt.issuer-uri=http://localhost:8082
+#spring.security.oauth2.authorization.server.jwt.audience=cashcard-client

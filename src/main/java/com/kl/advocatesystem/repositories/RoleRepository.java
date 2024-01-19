@@ -1,6 +1,6 @@
 package com.kl.advocatesystem.repositories;
 
-import com.kl.advocatesystem.entities.Role;
+import com.kl.advocatesystem.domain.entities.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
